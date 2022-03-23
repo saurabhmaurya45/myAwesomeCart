@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>{% block title %} {% endblock %}</title>
+</head>
+
+
+{% block css %} {% endblock %}
+
+<style>/* Footer */
+    section {
+        padding: 60px 0;
+    }
+    
+    section .section-title {
+        text-align: center;
+        color: #007b5e;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+    #footer {
+        background: #007b5e !important;
+    }
+    #footer h5{
+      padding-left: 10px;
+        border-left: 3px solid #eeeeee;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+        color:#ffffff;
+    }
+    #footer a {
+        color: #ffffff;
+        text-decoration: none !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+    #footer ul.social li{
+      padding: 3px 0;
+    }
+    #footer ul.social li a i {
+        margin-right: 5px;
+      font-size:25px;
+      -webkit-transition: .5s all ease;
+      -moz-transition: .5s all ease;
+      transition: .5s all ease;
+    }
+    #footer ul.social li:hover a i {
+      font-size:30px;
+      margin-top:-10px;
+    }
+    #footer ul.social li a,
+    #footer ul.quick-links li a{
+      color:#ffffff;
+    }
+    #footer ul.social li a:hover{
+      color:#eeeeee;
+    }
+    #footer ul.quick-links li{
+      padding: 3px 0;
+      -webkit-transition: .5s all ease;
+      -moz-transition: .5s all ease;
+      transition: .5s all ease;
+    }
+    #footer ul.quick-links li:hover{
+      padding: 3px 0;
+      margin-left:5px;
+      font-weight:700;
+    }
+    #footer ul.quick-links li a i{
+      margin-right: 5px;
+    }
+    #footer ul.quick-links li:hover a i {
+        font-weight: 700;
+    }
+    
+    @media (max-width:767px){
+      #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
+    }
+    </style>
+
+
+<body>
+    <button type="submit" class="btn btn-primary"><span class="bi-search"></span> Search</button>
+  <!--  navigation bar code starts here-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/shop">My Awesome Cart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/shop">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/about">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/shop/tracker">Tracker</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/shop/contact">Contact Us</a>
+          </li>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0"> 
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true">
+  Cart(<span id="cart">0</span>)
+</button>
+    </div>
+  </nav>
+  
+  <!--nav bar code ends here-->
+  {% block body %} {% endblock %}
+
+<!--footer-->
+
+<footer class="bg-white mt-4">
+    <div class="container py-5">
+        <div class="row py-3">
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">About</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">Contact Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">About Us</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Help</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">Payments</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Shipping</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Cancellation</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Returns</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Policy</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">Return Policy</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Terms Of Use</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Security</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Sitemap</a></li>
+                    <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-lg-0">
+                <h6 class="text-uppercase font-weight-bold mb-4">Registered Office Address</h6>
+                <p class="text-muted mb-4">24/A-2 Vihar Street, Sant vihar Nagar, Delhi <br> PIN: 200001</p>
+               
+            </div>
+        </div>
+    </div>
+    
+    <hr class="p-0 m-0 b-0">
+    <div class="bg-light py-2">
+        <div class="container text-center">
+            <p class="text-muted mb-0 py-2">© 2021-2022 MyAwesomecart All risghts reserved.</p>
+        </div>
+    </div>
+</footer>
+    <!-- ./Footer -->
+  <!--javascript-->
+  {% block js %}
+  
+  {% endblock %}  
+</body>
+</html>

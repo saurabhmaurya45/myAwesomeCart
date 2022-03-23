@@ -1,0 +1,82 @@
+{% extends 'shop/basic.html' %}
+{% block title%} Contact Us | My Cart | Shop Here {% endblock %}
+
+{% block body %}
+        <!--contact us content starts here-->
+		<div class="container">
+            <div class="jumbotron">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row no-gutters mb-2">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4 justified-content-center">Contact Us</h3>
+									<div id="form-message-warning" class="mb-4"></div> 
+									{% if messages %}
+									<div class="messages alert alert-success alert-dismissible fade show" role="alert">
+										{% for message in messages %}
+										{{ message }}
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+										{% endfor %}
+									</div>
+									{% endif %}
+									<form method="POST" action="/shop/contact" id="contactForm" name="contactForm" class="contactForm">{% csrf_token %}
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Name</label>
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>									
+											<div class="col-md-6"> 
+												<div class="form-group">
+													<label class="label" for="tel">Phone Number</label>
+													<input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+												</div>
+											</div>
+											<div class="col-md-12"> 
+													<div class="form-group">
+														<label class="label" for="email">Email Address</label>
+														<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+														</div>
+												</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Subject</label>
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="message">Message</label>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Send Message" class="btn btn-primary">
+													
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch mt-5">
+								<div id="map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28401.953321763678!2d83.74168114281666!3d27.14860695129889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399405f255a1917b%3A0x6a81af17a7f824bc!2sSiswa%20Bazar%2C%20Uttar%20Pradesh%20273163!5e0!3m2!1sen!2sin!4v1632244064402!5m2!1sen!2sin" width='400px' height="450px" style="border:2px;" allowfullscreen="" loading="lazy"></iframe>
+			          </div>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!--contact us content ends here-->
+    
+   
+{% endblock%}
